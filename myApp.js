@@ -26,7 +26,7 @@ const createManyPeople = (arrayOfPeople, done) => {
   Person.create(arrayOfPeople)
   .then(users => {
     console.log(users);
-    done(null, data)
+    done(null, arrayOfPeople)
 }).catch(err => console.log(err));
 };
 
