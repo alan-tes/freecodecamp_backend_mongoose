@@ -36,7 +36,7 @@ if(err) {
   err => console.log(err)
 } else {
     console.log(user);
-    done(null, arrayOfPeople)
+    done(null, user)
 }
   })
 };
