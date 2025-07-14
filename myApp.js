@@ -31,11 +31,14 @@ const createManyPeople = (arrayOfPeople, done) => {
 };
 
 const findPeopleByName = (personName, done) => {
-  Person.find({name: personName})
-  .then(user => {
+  Person.find({name: personName}, (err, user) => {
+if(err) {
+  err => console.log(err)
+} else {
     console.log(user);
     done(null, arrayOfPeople)
-}).catch(err => console.log(err));
+}
+  })
 };
 
 const findOneByFood = (food, done) => {
