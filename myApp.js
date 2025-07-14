@@ -53,7 +53,7 @@ if(err) {
 };
 
 const findPersonById = (personId, done) => {
-  Person.findById({_id: personId}, (err, user) => {
+  Person.findById(personId, (err, user) => {
 if(err) {
   err => console.log(err)
 } else {
