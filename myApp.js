@@ -42,7 +42,14 @@ if(err) {
 };
 
 const findOneByFood = (food, done) => {
-  done(null /*, data*/);
+   Person.findOne({favoriteFoods: food}, (err, favoriteFoodss) => {
+if(err) {
+  err => console.log(err)
+} else {
+    console.log(favoriteFoodss);
+    done(null, favoriteFoodss)
+}
+  })
 };
 
 const findPersonById = (personId, done) => {
